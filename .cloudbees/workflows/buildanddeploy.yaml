@@ -184,6 +184,12 @@ jobs:
           orgname: ashok.alogicfocus
           token: 79781dde-8b3d-45c6-9561-a2ebc1e9e18c
           language: LANGUAGE_JAVA
+      - name: Publish evidence
+        uses: cloudbees-io/publish-evidence-item@v1
+        with:
+          content: |-
+            ${{vars.PETCLINIC_SCA_SCAN_RESULTS}} 
+          format: MARKDOWN          
   exit_gate:
     environment: snaqvi_DEV
     steps:
