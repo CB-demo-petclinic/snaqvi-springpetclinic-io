@@ -11,7 +11,7 @@ env:
   NAMESPACE: snaqvi
 jobs:
   evidence-collection:
-    if: "false"
+    #if: "false"
     outputs:
       commit_id: ${{ steps.commitinfo.outputs.commit_id }}
       commit_msg: ${{ steps.commitinfo.outputs.commit_msg }}
