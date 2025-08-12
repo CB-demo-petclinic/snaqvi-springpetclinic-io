@@ -1,0 +1,30 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Workflow_Calling_Reusable_Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: CB-demo-petclinic/snaqvi-springpetclinic-io/.cloudbees/workflows/<reusable-workflow.yaml@v2>
+    with:
+      config-path: ./config/demo-app
+    secrets:
+      access-token: ${{ secrets.token }}
+
+  pass:
+    needs: [deploy]
+    if: needs.deploy.outputs.deploy-result == 'pass'
+    steps:
+      - name: Pass
+        uses: docker://alpine:3.21
+        run: echo "Deploy success alert"
+
+  fail:
+    needs: [deploy]
+    if: needs.deploy.outputs.deploy-result == 'fail'
+    steps:
+      - name: Handle deploy failure
+        uses: docker://alpine:3.21
+        run: echo "Deploy failure alert"
