@@ -1,7 +1,6 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: feature_flag_deployment0
-version: v1.0
 on:
   push:
     branches:
