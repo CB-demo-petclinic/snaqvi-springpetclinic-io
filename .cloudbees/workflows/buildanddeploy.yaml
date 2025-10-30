@@ -230,7 +230,7 @@ jobs:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
       - name: Set kubeconfig
-        uses: cashokannamalai/kubeconfig@v1
+        uses: cloudbees-days/snaqvi-kubeconfig@v1
         with:
           secname: ${{ secrets.kubeconfig }}
       - name: Install helm chart
@@ -264,7 +264,7 @@ jobs:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
       - name: Set kubeconfig
-        uses: cashokannamalai/kubeconfig@v1
+        uses: cloudbees-days/snaqvi-kubeconfig@v1
         with:
           secname: ${{ secrets.kubeconfig }}
       - name: Install helm chart
@@ -313,7 +313,7 @@ jobs:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
       - name: Set kubeconfig
-        uses: cashokannamalai/kubeconfig@v1
+        uses: cloudbees-days/snaqvi-kubeconfig@v1
         with:
           secname: ${{ secrets.kubeconfig }}
       - name: Install helm chart
