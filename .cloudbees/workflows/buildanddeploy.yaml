@@ -179,13 +179,13 @@ jobs:
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
-      - uses: cloudbees-io/snyk-sca-scan-dependency@v1
-        name: Scan with Snyk SCA
-        kind: scan
-        with:
-          orgname: ${{ secrets.SNYK_ORGNAME }}
-          token: ${{ secrets.SNYK_TOKEN }}
-          language: LANGUAGE_JAVA
+#      - uses: cloudbees-io/snyk-sca-scan-dependency@v1
+#        name: Scan with Snyk SCA
+#        kind: scan
+#        with:
+#          orgname: ${{ secrets.SNYK_ORGNAME }}
+#          token: ${{ secrets.SNYK_TOKEN }}
+#          language: LANGUAGE_JAVA
       - name: Publish evidence
         uses: cloudbees-io/publish-evidence-item@v1
         with:
